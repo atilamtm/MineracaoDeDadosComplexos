@@ -18,7 +18,7 @@ x[11:9]
 ## elemento de "x" deve ser o ultimo elemento de "y", o segundo
 ## elemento de "x" deve ser o penultimo elemento de "y", e assim por
 ## diante.  
-y <- x[length(x):1]
+y <- x[17:1]
 
 ## Imprima os elementos impares de "y"
 y[ y %% 2 == 1]
