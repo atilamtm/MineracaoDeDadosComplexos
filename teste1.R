@@ -1,6 +1,6 @@
 ########################################
 # Teste 1 - INF-0612          
-# Nome: 
+# Nome: Atila de Moura Tavano Moretto
 ########################################
 
 ## Criamos um vetor "x" com 17 posicoes, com numeros de 4 ate 20
@@ -18,13 +18,13 @@ x[11:9]
 ## elemento de "x" deve ser o ultimo elemento de "y", o segundo
 ## elemento de "x" deve ser o penultimo elemento de "y", e assim por
 ## diante.  
-y <-
+y <- x[length(x):1]
 
 ## Imprima os elementos impares de "y"
-y[]
+y[ y %% 2 == 1]
 
 ## Imprima os elementos de "x" estritamente maiores que 8
-x[]
+x[ x > 8]
 
 ## Criamos um vetor de nomes chamado "names"
 names <- c("Joao", "Laura", "Carlos", "Bruna", "Pedro", "Joao", "Maria")
@@ -40,12 +40,12 @@ student <- c(F, T, F, T, F, T, T)
 ## "Joao", que esta na posicao 1 do vetor "names" nao deve ser
 ## impressa. Ja a posicao 2 de "student" eh TRUE, entao "Laura", que
 ## esta na posicao 2 do vetor "names", deve ser impressa
-names[]
+names[student]
 
 ## Crie (e exiba) um data frame chamado "dados" tal que:
 ##  -a primeira coluna, chamada "nome", seja o vetor "names" criado acima;
 ##  -a segunda coluna, chamada "idade", seja o vetor "ages" criado acima;
 ##  -a terceira coluna, chamada "matricula", seja o vetor "student" criado acima.
-dados <- 
+dados <- data.frame(nome = names, idade = ages, matricula = student)
 
 dados
