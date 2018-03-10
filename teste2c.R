@@ -1,6 +1,7 @@
 ########################################
 # Teste 2c - INF-0612          
-# Nome(s): Atila de Moura Tavano Moretto, Yakov Nae
+# Nome(s): Atila de Moura Tavano Moretto 
+#          Yakov Nae
 ########################################
 
 
@@ -16,17 +17,10 @@ chuva <- c(0.15, 0.02, 0.01, 0.13, 0.12, 2.19, 1.11, 0.76, 2.98, 0.45, 2.63, 0.7
 ## usando o comando df[!duplicated(df[,c('c', 'd')]),] (mantendo apenas a primeira ocorrencia) ou o
 ## comando df[!duplicated(df[,c('c', 'd')], fromLast = TRUE),] (mantendo apenas a ultima ocorrencia)
 
-#creating data frame
 records<-data.frame(dia,cidade,chuva)
-#sorting dataframe by chuva
 df<-records[order(records$chuva),]
-#removing duplicates (since it is ordered by chuva), it considers only max chuva for
-# any given day in any given city
 df<-df[!duplicated(df[,c('dia', 'cidade')], fromLast = TRUE),]
-#dimnames(df) - gives the row and column titles
-#dimnames(df)[[1]] - points on row titles - but they are strings
 records<-records[sort(as.numeric(dimnames(df)[[1]])),]
-#we won't need df from now on, so remove it
 rm(df)
 
 acumCamp <-  sum(records[records$cidade=="Campinas",]$chuva)

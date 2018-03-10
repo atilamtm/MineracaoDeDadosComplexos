@@ -1,6 +1,7 @@
 ########################################
 # Teste 2a - INF-0612          
-# Nome(s): Atila de Moura Tavano Moretto, Yakov Nae
+# Nome(s): Atila de Moura Tavano Moretto
+#          Yakov Nae
 ########################################
 
 ## Os vetores C, L e V representam os produtos distribuidos nas cidades de Campinas, Limeira e Vinhedo, respectivamente.
