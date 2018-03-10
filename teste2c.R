@@ -20,15 +20,18 @@ chuva <- c(0.15, 0.02, 0.01, 0.13, 0.12, 2.19, 1.11, 0.76, 2.98, 0.45, 2.63, 0.7
 records<-data.frame(dia,cidade,chuva)
 #sorting dataframe by chuva
 df<-records[order(records$chuva),]
-#removing duplicates (since it is ordered by chuva), it considers only max chuva
+#removing duplicates (since it is ordered by chuva), it considers only max chuva for
+# any given day in any given city
 df<-df[!duplicated(df[,c('dia', 'cidade')], fromLast = TRUE),]
 #dimnames(df) - gives the row and column titles
-#dimnames(df)[1] - points on row titles - but they are strings
-records<-records[sort(as.numeric(rownames(df))),]
+#dimnames(df)[[1]] - points on row titles - but they are strings
+records<-records[sort(as.numeric(dimnames(df)[[1]])),]
+#we won't need df from now on, so remove it
+rm(df)
 
-accumCamp <-  sum(records[records$cidade=="Campinas",]$chuva)
-accumLim <-  sum(records[records$cidade=="Limeira",]$chuva)
-accumVin <-  sum(records[records$cidade=="Vinhedo",]$chuva)
+acumCamp <-  sum(records[records$cidade=="Campinas",]$chuva)
+acumLim <-  sum(records[records$cidade=="Limeira",]$chuva)
+acumVin <-  sum(records[records$cidade=="Vinhedo",]$chuva)
 
 dmaxCamp <- records[records$chuva==max(records[records$cidade=="Campinas",]$chuva),][1,]$dia
 dmaxLim <- records[records$chuva==max(records[records$cidade=="Limeira",]$chuva),][1,]$dia
