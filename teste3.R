@@ -86,9 +86,6 @@ wordCount <- function(word, text) {
   wordList <- strsplit(text,"[ |.|,|!|?]")[[1]]
   count <- 0
   for(w in wordList) {
-    # remove leading and trailing whitespaces, https://stackoverflow.com/a/2261149
-    w <- gsub("^\\s+|\\s+$", "", w)
-
     if (toupper(w) == toupper(word)) {
       count <- count + 1
     }

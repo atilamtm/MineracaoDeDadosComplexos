@@ -25,7 +25,7 @@ rowMins <- function(m) {
 
 records <- data.frame(p1,p2,p3,p4,row.names = ids)
 
-medquad <- sqrt((rowSums(records*records) - rowMins(records)*rowMins(records))/3)
+medquad <- sqrt((rowSums(records*records) - rowMins(records)*rowMins(records))/(dim(records)[2]-1))
 
 mp1 <- mean(records[,1])
 mp2 <- mean(records[,2])
